@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Junior Front End assignment</title> 
+        <meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="css/main.css"/>
+    </head>
+    <body>
+		<div class="page-container">
+			<div class="img-container">
+				<img class="envelope-icon" src="images/envelope_icon.png">
+				<p>Welcome to</p>
+				<p>Mail App</p>
+			</div>
+			<div class="form-container">
+				<div class="arrow"></div>
+				<div class="input-container"><input class="input-box" type="text" name="username" id="username" placeholder="Enter your name"/><label class="fa fa-user" for="username"></label></div>       
+				<div class="input-container"><input class="input-box" type="password" name="password" id="password" placeholder="Password"/><label class="fa fa-lock" for="password"></label></div>
+				<div class="input-container">
+					<button class="input-box login-button" id="login" onclick="submit(this)">
+						<span>Login</span>
+						<img class="spinner" src="images/spinner.gif"/>
+					</button>
+				</div>
+				<div align="center"><a class="link" href="#">Lost your password?</a></div>
+			</div>
+		</div>
+        <script src="https://use.fontawesome.com/f227f9fe38.js"></script>
+        <script>
+			function submit($element){
+				var $span = $element.querySelector('span'),
+					$spinner = $element.querySelector('img');
+				$span.style.display = 'none';
+				$spinner.style.display = 'block';
+				setTimeout(function(){
+					$span.style.display = 'block';
+					$spinner.style.display = 'none';	
+				},1000)
+			}
+		</script>
+    </body>
+</html>
